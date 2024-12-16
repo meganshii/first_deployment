@@ -123,7 +123,6 @@
 //     );
 //   }
 // }
-
 import { NextResponse } from "next/server";
 import { sheets } from "@/lib/googlesheet";
 import { VisitData } from "@/hooks/useTrackUserSource";
@@ -181,70 +180,76 @@ export async function POST(request: Request) {
     } = data;
     console.log("Received data:", data);
 
-    // Prepare data for Google Sheets
-    const sheetData: (string | number)[] = [
-      fullname,
-      email,
-      mobilenumber,
-      message || "",
-      formId,
-      new Date().toISOString(),
-      // Handle cartItems if they exist
-      ...(Array.isArray(cartItems)
-        ? cartItems.flatMap((item) => [item.id, item.name, item.image])
-        : []),
-      // Handle inventoryItems if they exist
-      ...(Array.isArray(inventoryItems)
-        ? inventoryItems.flatMap((item) => [
-            item.title,
-            item.categoryType,
-            item.description,
-            item.img,
-            item.code,
-            item.information,
-          ])
-        : []),
-      visitData.IP_Address || "",
-      visitData.Country || "",
-      visitData.City || "",
-      visitData.Web_Region || "",
-      visitData.Latitude || "",
-      visitData.Longitude || "",
-      visitData.Zip_Code || "",
-      visitData.Language || "",
-      visitData.Os_Name || "",
-      visitData.Device_Type || "",
-      visitData.Browser_Name || "",
-      visitData.Current_Page || "",
-      visitData.Visitor_First_Page || "",
-      visitData.Landing_page || "",
-      visitData.Visit_Count || "",
-      visitData.Lead_Source || "",
-      visitData.Referrer || "",
-      visitData.Ad_Medium || "",
-      visitData.Ad_CampaignName || "",
-      visitData.Ad_Campaign || "",
-      visitData.Ad_AdGroup || "",
-      visitData.Ad_Adcopy || "",
-      visitData.Ad_Keyword || "",
-      visitData.Ad_Matchtype || "",
-      visitData.Ad_Device || "",
-      visitData.Ad_Gclid || "",
-      visitData.Ad_Source || "",
-    ];
+    let sheetsResult;
+    let zohoResult;
 
-    // Append data to Google Sheets
-    const sheetsResult = await sheets.spreadsheets.values.append({
-      spreadsheetId: SPREADSHEET_ID,
-      range: RANGE,
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [sheetData],
-      },
-    });
-    console.log("Google Sheets result:", sheetsResult.data);
+    // Check if the formId is "support" or "supportLayout"
+    if (formId === "User Guide" || formId === "Inventory") {
+      // Prepare data for Google Sheets
+      const sheetData: (string | number)[] = [
+        fullname,
+        email,
+        mobilenumber,
+        message || "",
+        formId,
+        new Date().toISOString(),
+        // Handle cartItems if they exist
+        ...(Array.isArray(cartItems)
+          ? cartItems.flatMap((item) => [item.id, item.name, item.image])
+          : []),
+        // Handle inventoryItems if they exist
+        ...(Array.isArray(inventoryItems)
+          ? inventoryItems.flatMap((item) => [
+              item.title,
+              item.categoryType,
+              item.description,
+              item.img,
+              item.code,
+              item.information,
+            ])
+          : []),
+        visitData.IP_Address || "",
+        visitData.Country || "",
+        visitData.City || "",
+        visitData.Web_Region || "",
+        visitData.Latitude || "",
+        visitData.Longitude || "",
+        visitData.Zip_Code || "",
+        visitData.Language || "",
+        visitData.Os_Name || "",
+        visitData.Device_Type || "",
+        visitData.Browser_Name || "",
+        visitData.Current_Page || "",
+        visitData.Visitor_First_Page || "",
+        visitData.Landing_page || "",
+        visitData.Visit_Count || "",
+        visitData.Lead_Source || "",
+        visitData.Referrer || "",
+        visitData.Ad_Medium || "",
+        visitData.Ad_CampaignName || "",
+        visitData.Ad_Campaign || "",
+        visitData.Ad_AdGroup || "",
+        visitData.Ad_Adcopy || "",
+        visitData.Ad_Keyword || "",
+        visitData.Ad_Matchtype || "",
+        visitData.Ad_Device || "",
+        visitData.Ad_Gclid || "",
+        visitData.Ad_Source || "",
+      ];
 
-    // Prepare data for Zoho CRM
+      // Append data to Google Sheets
+      sheetsResult = await sheets.spreadsheets.values.append({
+        spreadsheetId: SPREADSHEET_ID,
+        range: RANGE,
+        valueInputOption: "USER_ENTERED",
+        requestBody: {
+          values: [sheetData],
+        },
+      });
+      console.log("Google Sheets result:", sheetsResult.data);
+    }
+
+    // Prepare data for Zoho CRM (for all form submissions)
     const zohoData = {
       fullname,
       email,
@@ -269,6 +274,7 @@ export async function POST(request: Request) {
     );
 
     console.log("Zoho CRM result:", zohoResponse.data);
+    zohoResult = zohoResponse.data;
 
     if (zohoResponse.status !== 200) {
       throw new Error("Zoho CRM submission failed");
@@ -277,8 +283,8 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message: "Form submitted successfully",
-        sheetsResult: sheetsResult.data,
-        zohoResult: zohoResponse.data,
+        sheetsResult: sheetsResult?.data,
+        zohoResult,
       },
       { status: 200 }
     );

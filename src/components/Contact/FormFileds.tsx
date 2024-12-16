@@ -26,7 +26,6 @@ const FormFields: React.FC<FormFieldsProps> = ({
 }) => {
   const pathname = usePathname();
   const countryCode = pathname.split("/")[1]?.toLowerCase() || "in";
-
   const [touchedFields, setTouchedFields] = useState<Partial<Record<keyof FormValues, boolean>>>({});
 
   const handleChange = (

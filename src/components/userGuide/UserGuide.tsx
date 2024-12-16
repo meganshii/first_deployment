@@ -97,10 +97,31 @@ export const UserGuide: React.FC<UserGuideProps> = ({ userGuideData }) => {
     setCards(filterCards());
   }, [searchTerm, selectedCategories]);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted with values:", formValues);
-    handleCloseDownloadModal();
+    try {
+      const response = await fetch('/api/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formValues,
+          formId: "User Guide",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      console.log('Form submitted successfully');
+      handleCloseDownloadModal();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      // You might want to show an error message to the user here
+    }
   };
 
   return (
@@ -521,5 +542,4 @@ export const UserGuide: React.FC<UserGuideProps> = ({ userGuideData }) => {
 };
 
 export default UserGuide;
-
 

@@ -139,7 +139,7 @@ const Page2: React.FC<GenuinePartsProps> = ({ genuinePartsData }) => {
       // Include inventory items with form data
       const submissionData = {
         ...formValues,
-        formId: "SignupFormDemoProduct",
+        formId: "Inventory",
         inventoryItems: inventoryItems,
       };
       await submitForm(submissionData);
