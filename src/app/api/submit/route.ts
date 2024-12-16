@@ -181,7 +181,6 @@ export async function POST(request: Request) {
     console.log("Received data:", data);
 
     let sheetsResult;
-    let zohoResult;
 
     // Check if the formId is "support" or "supportLayout"
     if (formId === "User Guide" || formId === "Inventory") {
@@ -273,8 +272,7 @@ export async function POST(request: Request) {
       }
     );
 
-    console.log("Zoho CRM result:", zohoResponse.data);
-    zohoResult = zohoResponse.data;
+    const zohoResult = zohoResponse.data;
 
     if (zohoResponse.status !== 200) {
       throw new Error("Zoho CRM submission failed");
