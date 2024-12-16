@@ -69,7 +69,6 @@
 //     "/((?!_next/static|_next/image|favicon.ico|api).*)", // Exclude static assets, image optimization, favicon, and API routes
 //   ],
 // };
-import { NextResponse } from "next/server";
 
 // List of valid ISO country codes (ISO 3166-1 alpha-2)
 const validCountryISOs = [
@@ -423,6 +422,8 @@ const validCountryISOs = [
 // const validLocales = ["en", "fr", "nl", "de", "es", "ta", "hi"];
 // const defaultLocale = "en";
 // Function to fetch user location based on client IP address using ipwhois.app
+import { NextResponse } from "next/server";
+
 const validLocales = [
   "af",
   "sq",
@@ -531,89 +532,91 @@ const validLocales = [
   "yo",
   "zu",
 ];
-const defaultLocale = "en";
 
-function setCookie(name, value, options) {
-  const { res, path = "/" } = options;
-  res.cookies.set(name, value, { path });
+const defaultLocale = "en";
+const defaultCountry = "us";
+
+function setCookie(name, value, { res, path = "/" }) {
+  res.cookies.set(name, value, { path, httpOnly: true, secure: true });
 }
 
 function getBrowserLanguage(req) {
   const acceptLanguageHeader = req.headers.get("accept-language");
   if (!acceptLanguageHeader) return defaultLocale;
+
   const browserLanguage = acceptLanguageHeader.split(",")[0]?.split("-")[0];
-  console.log("Browser language detected:", browserLanguage);
   return validLocales.includes(browserLanguage)
     ? browserLanguage
     : defaultLocale;
 }
 
 async function fetchUserLocation(req) {
-  console.log("Fetching client IP address...");
-  const myip = "106.219.68.189"; // For development
-  const isDevelopment = process.env.NODE_ENV === "development";
   const clientIP =
-    req.headers.get("x-forwarded-for")?.split(",")[0] ||
-    req.headers.get("x-real-ip");
-  const newClientIp = isDevelopment ? myip : clientIP;
-  if (!newClientIp) {
-    console.error("Unable to detect client IP address.");
-    return { country: "us", language: "en", ipData: null };
-  }
-  console.log("Detected client IP address:", newClientIp);
-  const nesscoUrl = `https://ipinfo.io/${newClientIp}/json/`;
-  try {
-    const nesscoResponse = await fetch(nesscoUrl);
-    if (nesscoResponse.ok) {
-      const data = await nesscoResponse.json();
-      console.log("Using Nessco API", nesscoUrl);
-      return {
-        country:
-          data.country?.toLowerCase() || data.country_code?.toLowerCase(),
-        language: "en",
-        ipData: data,
-      };
-    }
-  } catch (error) {
-    console.error("Nessco API failed:", error);
-  }
+    process.env.NODE_ENV === "development"
+      ? "106.219.68.189" // Development IP
+      : req.headers.get("x-forwarded-for")?.split(",")[0] ||
+        req.headers.get("x-real-ip");
 
-  const fallbackServices = [
-    `https://ipinfo.io/${newClientIp}/json/`,
-    `https://ipapi.co/${newClientIp}/json/`,
-    `https://ipwhois.app/json/${newClientIp}`,
-    `https://json.geoiplookup.io/${newClientIp}`,
-    `https://get.geojs.io/v1/ip/geo/${newClientIp}.json`,
+  if (!clientIP) {
+    console.error("Unable to detect client IP address.");
+    return { country: defaultCountry, ipData: null };
+  }
+  // Function to handle fetch with timeout
+  async function fetchWithTimeout(
+    url: string,
+    timeout: number
+  ): Promise<Response> {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId); // Clear timeout if fetch is successful
+      return response;
+    } catch (error) {
+      clearTimeout(timeoutId); // Ensure timeout is cleared in case of error
+      if (error.name === "AbortError") {
+        console.warn(`Request to ${url} timed out.`);
+      } else {
+        console.error(`Error fetching ${url}:`, error);
+      }
+      throw error;
+    }
+  }
+  const ipServices = [
+    `https://ipinfo.io/${clientIP}/json/`,
+    `https://ipapi.co/${clientIP}/json/`,
+    `https://ipwhois.app/json/${clientIP}`,
+    `https://json.geoiplookup.io/${clientIP}`,
+    `https://get.geojs.io/v1/ip/geo/${clientIP}.json`,
   ];
 
-  for (const service of fallbackServices) {
+  for (const service of ipServices) {
     try {
-      const response = await fetch(service);
+      const response = await fetchWithTimeout(service, 5000); // 5-second timeout for each service
       if (response.ok) {
         const data = await response.json();
-        console.log("Using fallback service", service);
         return {
-          country: service.includes("ipwhois.app")
-            ? data.country_code?.toLowerCase()
-            : data.country?.toLowerCase() || data.country_code?.toLowerCase(),
-          language: "en",
+          country:
+            data.country?.toLowerCase() ||
+            data.country_code?.toLowerCase() ||
+            defaultCountry,
           ipData: data,
         };
       }
     } catch (error) {
-      console.warn(`Service ${service} failed:`, error);
+      console.warn(`Service ${service} failed:`, error.message);
     }
   }
 
-  console.error("All IP services failed, using default location.");
-  return { country: "us", language: "en", ipData: null };
+  console.error("All IP services failed. Using default location.");
+  return { country: defaultCountry, ipData: null };
 }
 
 export async function middleware(req) {
   const { pathname } = req.nextUrl;
-  console.log("Current path:", pathname);
-
   const pathParts = pathname.split("/").filter(Boolean);
+
   const userCountryISO = pathParts[0]?.toLowerCase();
   const userLanguage = pathParts[1]?.toLowerCase();
 
@@ -621,27 +624,24 @@ export async function middleware(req) {
   const isLanguageValid = validLocales.includes(userLanguage);
 
   const res = NextResponse.next();
-  res.headers.set("x-next-url-path", req.nextUrl.pathname);
-  res.headers.set("x-next-url-query", req.nextUrl.search);
+
+  // If URL already has valid country and language, set cookies and proceed
   if (isCountryValid && isLanguageValid) {
-    console.log("Valid country and language in URL, setting cookies...");
-    setCookie("country", userCountryISO, { res, path: "/" });
-    setCookie("language", userLanguage, { res, path: "/" });
+    setCookie("country", userCountryISO, { res });
+    setCookie("language", userLanguage, { res });
     return res;
   }
 
-  const userLocation = await fetchUserLocation(req);
-  const { country: detectedCountry, ipData } = userLocation;
+  // Detect user location and language
+  const { country: detectedCountry, ipData } = await fetchUserLocation(req);
   const browserLanguage = getBrowserLanguage(req);
-  console.log("Detected user country:", detectedCountry);
-  console.log("Browser language:", browserLanguage);
 
-  setCookie("country", detectedCountry, { res, path: "/" });
-  setCookie("language", browserLanguage, { res, path: "/" });
+  setCookie("country", detectedCountry, { res });
+  setCookie("language", browserLanguage, { res });
 
-  // Set IP data in a cookie for client-side access
+  // Optionally store IP data in a cookie
   if (ipData) {
-    setCookie("ipData", JSON.stringify(ipData), { res, path: "/" });
+    setCookie("ipData", JSON.stringify(ipData), { res });
   }
 
   const redirectURL = `/${detectedCountry}/${browserLanguage}`;

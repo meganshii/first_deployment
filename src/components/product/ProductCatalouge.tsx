@@ -196,6 +196,9 @@ const Page2: React.FC<ProductProps> = ({ productData }) => {
   }, [expandedIndex]);
 
   function formatString(input) {
+    // Ensure input is a string (default to empty string if undefined or null)
+    if (!input) return "";
+
     return input.toLowerCase().replace(/\s+/g, "-");
   }
 
@@ -323,7 +326,7 @@ const Page2: React.FC<ProductProps> = ({ productData }) => {
                                       </div>
                                     </div>
                                     <div className="w-8 h-8 bg-white p-[0.2rem] border-solid border-[0.1rem] border-white hover:border-red-700 rounded-full flex items-center justify-center relative group">
-                                    <BlurImage
+                                      <BlurImage
                                         src={containerItem?.image}
                                         alt={containerItem?.imageInformation}
                                         width={400}
@@ -355,7 +358,7 @@ const Page2: React.FC<ProductProps> = ({ productData }) => {
                                   >
                                     <div className="flex justify-center items-center lg:h-[14rem] h-[10rem] overflow-hidden">
                                       <div className="p-2 flex justify-center items-center">
-                                      <BlurImage
+                                        <BlurImage
                                           src={containerItem?.img}
                                           alt={`${containerItem?.h2} ${containerItem?.h1}`}
                                           width={400}

@@ -1,7 +1,6 @@
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import { unstable_setRequestLocale } from "next-intl/server";
 import NavLayout from "@/components/Navbar/NavLayout";
 import {
   CountryCode,
@@ -59,13 +58,10 @@ export async function generateMetadata({
   params: { country: CountryCode; locale: string };
 }) {
   const countryName = countryNames[country] || "Country";
-
   const heroData = await fetchHeroData(locale);
-
   const metaTitle = heroData?.home?.[0]?.homeSeoData?.title || "Default Title";
   const metaDescription =
     heroData?.home?.[0]?.homeSeoData?.description || "Default Description";
-
   return {
     title: `${metaTitle} - ${countryName}`,
     description: `${metaDescription} (${countryName})`,
@@ -114,7 +110,6 @@ export default async function RootLayout({
   }
   locale = locales.includes(locale as any) ? locale : "en";
 
-  unstable_setRequestLocale(locale);
 
   return (
     <html lang={`${locale}-${country.toUpperCase()}`}>
