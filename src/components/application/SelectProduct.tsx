@@ -5,9 +5,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Modal from "./Modal";
 import { Product } from "./Pages";
-import Link from "next/link";
 import BlurImage from "../ui/BlurImage";
-
+import Link from 'next/link'
 gsap.registerPlugin(ScrollTrigger);
 const Page2 = ({
   applicationData,
