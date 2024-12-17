@@ -13,7 +13,7 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = memo(
   ({ text, index, activeLink, handleClick }) => (
     <div
-      className={`text-black text-base font-light flex flex-row py-1 transition-all duration-300 ${
+      className={`text-black cursor-pointer text-base font-light flex flex-row py-1 transition-all duration-300 ${
         activeLink === index ? "border-b-2 border-red-700 text-red-700" : ""
       }`}
       onClick={handleClick}
@@ -109,7 +109,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
     ) {
       const container = mobileNavRef.current;
       const activeItem = navItemRefs.current[activeLink];
-
       if (activeItem) {
         const containerRect = container.getBoundingClientRect();
         const activeItemRect = activeItem.getBoundingClientRect();
@@ -117,7 +116,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
         const isItemVisible =
           activeItemRect.left >= containerRect.left &&
           activeItemRect.right <= containerRect.right;
-
         if (!isItemVisible) {
           const scrollLeft =
             activeItemRect.left -
@@ -131,7 +129,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
       }
     }
   }, [activeLink]);
-
   return (
     <div
       ref={navRef}
@@ -172,7 +169,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ type, navItems }) => {
           </ul>
         </nav>
       </div>
-
       {/* Desktop Navigation */}
       <nav
         className={`hidden ${

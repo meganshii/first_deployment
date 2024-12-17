@@ -68,11 +68,15 @@ async function fetchCountryData(locale: string): Promise<string> {
   }
 }
 
-const normalizeTitle = (title: string) =>
-  title.toLowerCase().replace(/\s+/g, " ").trim();
+const normalizeTitle = (title: string | undefined | null): string => {
+  return title ? title.toLowerCase().replace(/\s+/g, " ").trim() : "";
+};
 
-const formatMachineName = (name: string): string => {
-  return name.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+const formatMachineName = (name: string | undefined | null): string => {
+  if (!name) return ""; // Handle undefined or null inputs safely
+  return name
+    .replace(/-/g, " ") // Replace dashes with spaces
+    .replace(/\b\w/g, (char) => char.toUpperCase()); // Capitalize each word
 };
 
 export async function generateMetadata({
@@ -140,14 +144,14 @@ export async function generateMetadata({
       siteName: "Nessco",
       url: `${baseUrl}`,
       title: `${page2machine?.seoTitle}  - ${countryName} `,
-    description: page2machine?.description,
+      description: page2machine?.description,
       images: seoData?.openGraph?.images,
     },
     twitter: {
       card: "summary_large_image",
       site: "@NesscoIndia",
       title: `${page2machine?.seoTitle}  - ${countryName} `,
-    description: page2machine?.description,
+      description: page2machine?.description,
       images: seoData?.twitter?.image,
     },
     robots: {

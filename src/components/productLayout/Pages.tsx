@@ -36,8 +36,9 @@ const Page: React.FC<ProductLayoutProps> = ({ productLayoutData }) => {
   const formattedMachineName = formatMachineName(machinename);
 
   // Helper function to normalize title for comparison
-  const normalizeTitle = (title: string) =>
-    title.toLowerCase().replace(/\s+/g, " ").trim();
+  const normalizeTitle = (title: string | undefined | null): string => {
+    return title ? title.toLowerCase().replace(/\s+/g, " ").trim() : "";
+  };
 
   // Find the product by its normalized title
   const normalizedMachinename = normalizeTitle(formattedMachineName);
