@@ -64,9 +64,6 @@ const nextConfig = {
     ],
   },
   swcMinify: true,
-  output: "standalone", // Ensure standalone output for VPS deployments
-  experimental: {
-    trustHostHeader: true, // Trust headers passed by Nginx
-  },
+ 
 };
 export default withBundleAnalyzerPlugin(withNextIntl(nextConfig));
