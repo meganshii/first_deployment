@@ -94,7 +94,7 @@ const RelateProducts: React.FC<CombinedProps> = ({ related_product }) => {
 
   return (
     <>
-      <div className="w-full lg:mt-[5rem] mt-[4rem] font-poppins">
+      <div className="w-full lg:mt-[5rem] mt-[4rem] font-poppins bg-[#f2f2f2]">
         <div className="flex flex-col lg:my-[3rem] my-[2rem] bg-white lg:px-[2rem] px-[1rem] relative">
           <div className="pt-[1.5rem]">
             <h2 className="lg:text-[2.2rem] text-[1.5rem] font-semibold">

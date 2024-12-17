@@ -126,7 +126,7 @@ const Page5: React.FC<Page5Props> = ({
   };
 
   return (
-    <div className="w-full h-max lg:mt-[2rem] mt-[5rem] mb-[3rem] font-poppins">
+    <div className="w-full h-max lg:mt-[2rem] mt-[5rem] pb-[3rem] font-poppins bg-[#f2f2f2]">
       <div
         ref={borderRef}
         className="border-t-[0.1rem] border-solid border-[#6f6f6f] w-[10%] lg:mx-[2rem] mx-[1rem]"

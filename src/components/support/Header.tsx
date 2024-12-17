@@ -35,7 +35,7 @@ const Header: React.FC<CardsProps> = ({
   // Prepare the dynamic URL for the Link component
 
   return (
-    <>
+    <div className="bg-[#f2f2f2]">
       <div className="w-full h-full bg-white mt-14 py-4 lg:px-12 px-8 flex justify-center font-poppins">
         <div className="lg:w-1/2">
           <h1 className="bg-gradient-to-r from-[#483d73] to-red-700 bg-clip-text text-transparent lg:text-5xl text-3xl font-medium mb-2">
@@ -102,7 +102,7 @@ const Header: React.FC<CardsProps> = ({
           </LinkUrl>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

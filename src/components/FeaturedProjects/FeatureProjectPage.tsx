@@ -123,7 +123,7 @@ const FeatureProjectPage: React.FC<HomeLayoutProps> = ({ aboutData }) => {
   };
 
   return (
-    <div className="h-full relative overflow-hidden font-poppins">
+    <div className="h-full relative overflow-hidden font-poppins bg-[#f2f2f2]">
       <div className="relative flex flex-col w-full bg-white overflow-hidden">
         <h3 className="lg:text-5xl mt-16 text-3xl bg-gradient-to-r from-[#483d73] from-2% via-red-700 via-20% to-red-700 text-transparent bg-clip-text h-[7rem] font-semibold lg:ml-[2rem] ml-4">
           <span className="block">{homeaboutData?.featuredpage}</span>

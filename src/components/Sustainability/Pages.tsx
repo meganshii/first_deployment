@@ -30,7 +30,7 @@ const Pages:React.FC<MainLayoutProps> = ({sustainData}) => {
   
   // const [shown, setShown] = useState(false);
   return (
-    <div className=" overflow-hidden">
+    <div className=" overflow-hidden bg-[#f2f2f2]">
       <Page1 sustainData={sustainData}/>
       {/* {shown && <Page1 />} */}
       <Page2 sustainData={sustainData}/>

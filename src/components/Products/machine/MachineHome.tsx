@@ -76,7 +76,7 @@ const Machine: React.FC<MachineProps> = ({
   ];
 
   return (
-    <div className="pt-14 lg:h-[93vh] h-full flex flex-col justify-start font-poppins">
+    <div className="pt-14 lg:h-[93vh] h-full flex flex-col justify-start font-poppins bg-[#f2f2f2]">
       <div className="bg-white w-full py-2 lg:px-10 px-4">
         <BreadcrumbProduct items={breadcrumbItems} />
       </div>

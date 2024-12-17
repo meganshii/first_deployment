@@ -56,12 +56,14 @@ const Page: React.FC<ProductLayoutProps> = ({ productLayoutData }) => {
 
   return (
     <>
+    <div className="bg-[#f2f2f2]">
       <Page1 page1machine={page1machine} />
       <Page2
         paramsthing={params?.id}
         page2machine={page2machine}
         productLayoutData={productLayoutData}
       />
+      </div>
     </>
   );
 };

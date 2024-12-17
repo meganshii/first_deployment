@@ -11,8 +11,10 @@ interface MainLayoutprops {
 const OurStrength:React.FC <MainLayoutprops>= ({strengthData}) => {
   return (
     <>
+    <div className="bg-[#f2f2f2]">
       <LandingPage strengthData={strengthData} />
       <SecondPage strengthData={strengthData}/>
+      </div>
     </>
   );
 };

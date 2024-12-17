@@ -11,7 +11,7 @@ interface VisionProps {
 const Pages: React.FC<VisionProps> = ({ visionData }) => {
   return (
     <>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center bg-[#f2f2f2]">
         <Page1 visionData={visionData} />
         <Page2 visionData={visionData} />
       </div>

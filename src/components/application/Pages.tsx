@@ -32,6 +32,7 @@ const Pages: React.FC<ApplicationProps> = ({ applicationData }) => {
 
   return (
     <>
+    <div className="bg-[#f2f2f2]">
       <Page1 applicationData={applicationData} />
       <Page2
         selectedProduct={selectedProduct}
@@ -46,6 +47,7 @@ const Pages: React.FC<ApplicationProps> = ({ applicationData }) => {
         selectedProduct={selectedProduct}
         applicationData={applicationData}
       />
+      </div>
     </>
   );
 };

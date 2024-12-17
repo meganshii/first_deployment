@@ -11,11 +11,11 @@ interface GenuinePartsProps {
 
 const Pages: React.FC<GenuinePartsProps> = ({ genuinePartsData }) => {
   return (
-    <>
+    <div className="bg-[#f2f2f2] pb-4">
       <Page1 genuinePartsData={genuinePartsData} />
       <Page2 genuinePartsData={genuinePartsData} />
       {/* <Page3 genuinePartsData={genuinePartsData} /> */}
-    </>
+    </div>
   );
 };
 

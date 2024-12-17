@@ -1,7 +1,13 @@
 import createNextIntlPlugin from "next-intl/plugin";
+import withBundleAnalyzer from "@next/bundle-analyzer";
 
 // Create the Next.js Intl plugin
 const withNextIntl = createNextIntlPlugin();
+
+// Initialize Bundle Analyzer
+const withBundleAnalyzerPlugin = withBundleAnalyzer({
+  enabled: process.env.ANALYZE === "true", // Enables the analyzer when ANALYZE=true
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -58,15 +64,9 @@ const nextConfig = {
     ],
   },
   swcMinify: true,
-  // Add experimental features if needed
-  // experimental: {
-  //   optimizePackageImports: [
-  //     '@mantine/core',     // Add Mantine components
-  //     '@mantine/hooks',    // Add Mantine hooks
-  //     'lodash',            // Add Lodash for tree shaking
-  //   ],
-  // },
+  output: "standalone", // Ensure standalone output for VPS deployments
+  experimental: {
+    trustHostHeader: true, // Trust headers passed by Nginx
+  },
 };
-
-// Export the configuration with the Next.js Intl plugin applied
-export default withNextIntl(nextConfig);
+export default withBundleAnalyzerPlugin(withNextIntl(nextConfig));

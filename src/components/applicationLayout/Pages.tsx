@@ -91,6 +91,7 @@ const Pages: React.FC<ApplicationLayoutProps> = ({
 
   return (
     <>
+    <div className="bg-[#f2f2f2]">
       <Page1
         page1product={page1product}
         applicationLayoutData={applicationLayoutData}
@@ -128,6 +129,7 @@ const Pages: React.FC<ApplicationLayoutProps> = ({
         durden={FAQ.durden}
         emailPlaceholder={FAQ.emailPlaceholder}
       />
+      </div>
     </>
   );
 };
