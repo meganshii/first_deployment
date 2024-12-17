@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useState } from 'react';
-import Image from 'next/image';
+import BlurImage from "../ui/BlurImage";
 import { AboutItem } from './types/constant';
 interface HomeLayoutProps{
   aboutData:AboutItem;
@@ -67,7 +67,7 @@ const MobileCarousel:FC <HomeLayoutProps>= ({aboutData}) => {
                 : 'transform -translate-x-full'
             }`}
           >
-            <Image
+            <BlurImage
               src={image?.img}
               alt={`Slide ${index}`}
               height={200}

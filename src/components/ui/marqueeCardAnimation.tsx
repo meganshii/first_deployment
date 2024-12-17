@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import Image from "next/image"
+import BlurImage from "../ui/BlurImage";
 
 export  function InfiniteMovingCards({
   items,
@@ -42,7 +42,7 @@ export  function InfiniteMovingCards({
             className="w-[100px] max-w-full relative flex-shrink-0 px-2"
             key={idx}
           >
-            <Image
+            <BlurImage
               src={item?.src}
               alt={item?.alt}
               width={100}

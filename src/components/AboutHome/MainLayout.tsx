@@ -1,15 +1,15 @@
 "use client";
 import {  useRef } from "react";
-import Missionvission from "@/components/AboutHome/MissionVission";
-import OurCompany from "@/components/AboutHome/OurCompany";
-import PinkCity from "@/components/AboutHome/PinkCity";
-import FeatureProject from "@/components/AboutHome/FeatureProject";
-import Awards from "@/components/AboutHome/Awards";
+import dynamic from "next/dynamic";
+const Missionvission = dynamic(() => import("@/components/AboutHome/MissionVission"));
+const OurCompany = dynamic(() => import("@/components/AboutHome/OurCompany"));
+const PinkCity = dynamic(() => import("@/components/AboutHome/PinkCity"));
+const FeatureProject = dynamic(() => import("@/components/AboutHome/FeatureProject"));
+const Awards = dynamic(() => import("@/components/AboutHome/Awards"));
+const ExpandableCardDemo = dynamic(() => import("@/components/AboutHome/NewOurstrenght"));
+const NewSustainability = dynamic(() => import("@/components/AboutHome/NewSustainability"));
 import Homenew from "@/components/AboutHome/Homenew";
-import ExpandableCardDemo from "@/components/AboutHome/NewOurstrenght";
-import NewSustainability from "@/components/AboutHome/NewSustainability";
 import { AboutItem } from "./types/constant";
-// import NavLinksDemo from "./NavLink";
 
 interface MainLayoutProps {
   aboutData: AboutItem;
@@ -23,16 +23,6 @@ export default function MainLayout({ aboutData }: MainLayoutProps) {
   const sustainableRef = useRef<HTMLDivElement>(null);
   const featureprojectRef = useRef<HTMLDivElement>(null);
   const awardRef = useRef<HTMLDivElement>(null);
-
-  // const navItems = [
-  //     { text: "Mission & Vision", ref: missionRef },
-  //     { text: "Our Company", ref: ourcompanyRef },
-  //     { text: "Our Strenght", ref: ourstrenghtRef },
-  //     { text: "The Pink City", ref: pinkcityRef },
-  //     { text: "Sustainability", ref: sustainableRef },
-  //     { text: "Featured Projects", ref: featureprojectRef },
-  //     { text: "Awards", ref:awardRef},
-  //   ];
  
 
   return (

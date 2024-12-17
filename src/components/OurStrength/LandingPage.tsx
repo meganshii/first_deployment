@@ -1,9 +1,11 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OurStrengthItem} from "./types/constant";
-import ReusableForm from "../Contact/ReuseableForm";
+import dynamic from "next/dynamic";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+ssr: false,});
 
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 gsap.registerPlugin(ScrollTrigger);
 
 interface MainLayoutProps{
@@ -98,7 +100,7 @@ const Home:React.FC <MainLayoutProps>= ({strengthData}) => {
                 key={index}
                 className={`flex flex-col items-center ${imagebottoms[index]}`}
               >
-                 <Image
+                 <BlurImage
                   src={item?.img}
                   alt="Content"
                   width={100}

@@ -1,6 +1,6 @@
 import React from "react";
 import { GenuinePartsItem } from "./types/constant";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 interface GenuinePartsProps {
   genuinePartsData: GenuinePartsItem;
@@ -15,7 +15,7 @@ const Page3: React.FC<GenuinePartsProps> = ({ genuinePartsData }) => {
           {Box?.box?.map((item, idx) => (
             <div key={idx} className="bg-[#f5f5f5] rounded-lg p-4">
               <div className="w-full">
-                <Image
+                <BlurImage
                   src={item?.img}
                   alt={""}
                   width={400}

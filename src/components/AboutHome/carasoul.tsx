@@ -1,10 +1,6 @@
 "use client";
-// import { IoIosArrowForward } from "react-icons/io";
-// import { IoIosArrowBack } from "react-icons/io";
 import React, {  useRef } from "react";
-import Image from "next/image";
-// import { IoIosArrowDropleftCircle } from "react-icons/io";
-// import { IoIosArrowDroprightCircle } from "react-icons/io";
+import BlurImage from "../ui/BlurImage";
 import { AboutItem } from './types/constant';
 interface HomeLayoutProps{
   aboutData:AboutItem;
@@ -94,7 +90,7 @@ const Page4:React.FC<HomeLayoutProps> = ({aboutData}) => {
                   key={idx}
                   className="mx-[0.6vw]  lg:w-[20rem] w-full lg:h-[20rem] h-[20rem] bg-[#f2f2f2] flex flex-col items-center justify-center rounded-[1rem] overflow-hidden  hover:shadow-2xl cursor-pointer "
                 >
-                  <Image
+                  <BlurImage
                     className="w-[20rem] h-[20rem] object-cover"
                     width={500}
                     height={500}

@@ -8,7 +8,7 @@ const Bird = dynamic(() => import("./Bird"), { ssr: false });
 import dynamic from "next/dynamic";
 import { PinkCityData } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
-import Image from "next/image";
+import Image from "next/Image";
 interface AboutLayoutProps {
   pinkcityData: PinkCityData;
 }

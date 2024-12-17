@@ -786,7 +786,7 @@ const Pages: React.FC<MediaRoomProps> = ({ mediaRoomData }) => {
   };
 
   return (
-    <>
+    <div className="bg-[#f2f2f2]">
       <Header
         onSearch={handleSearch}
         searchQuery={searchQuery}
@@ -830,7 +830,7 @@ const Pages: React.FC<MediaRoomProps> = ({ mediaRoomData }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Pages;

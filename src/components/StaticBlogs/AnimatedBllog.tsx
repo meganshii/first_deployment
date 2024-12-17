@@ -91,7 +91,7 @@ const BlogGeneric: React.FC<BlogGenericProps> = ({ id }) => {
   };
 
   return (
-    <div className="font-sans min-h-screen lg:px-12 px-4 py-20">
+    <div className="font-sans min-h-screen lg:px-12 px-4 py-20 bg-[#f2f2f2]">
       {/* Header Image Section */}
       <div className="relative ">
         <motion.div

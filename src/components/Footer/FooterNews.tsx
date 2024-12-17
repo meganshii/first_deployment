@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import styles from "./footer.module.css";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import LocaleSwitcher from "../Navbar/NavLayouts/CountryLayout";
 import LinkUrl from "../LinkUrl";
 import {
@@ -131,7 +131,7 @@ const FooterNew: React.FC<FooterProps> = ({ footerData }) => {
                   {footerData?.businessPartners}
                 </p> */}
 
-                <div className=" flex flex-row lg:flex-col  w-full space-x-2 lg:space-x-0 lg:mt-0 mt-4 lg:hidden block">
+                <div className=" flex flex-row lg:flex-col  w-full space-x-2 lg:space-x-0 lg:mt-0 mt-4 lg:hidden">
                 <div className=" flex-col">
                 <h4
                   className={`font-semibold font-poppins text-sm md:text-xl lg:text-sm ${textColor}`}
@@ -183,7 +183,7 @@ const FooterNew: React.FC<FooterProps> = ({ footerData }) => {
                 </h4>
                 <div className="flex flex-row h-[3rem] w-[21rem] mb-4 -m-1 mt-3">
                   {footerData?.awards?.map((award, index) => (
-                    <Image
+                    <BlurImage
                       key={index}
                       height={300}
                       width={300}
@@ -211,7 +211,7 @@ const FooterNew: React.FC<FooterProps> = ({ footerData }) => {
                     ))}
                   </div>
                 </div>
-              <div className=" flex lg:block hidden flex-row lg:flex-col  w-full space-x-3 lg:space-x-0 ">
+              <div className="lg:flex  hidden flex-row lg:flex-col  w-full space-x-3 lg:space-x-0 ">
                 <div className=" flex-col">
                 <h4
                   className={`font-semibold font-poppins text-sm md:text-xl lg:text-sm ${textColor}`}
@@ -331,7 +331,7 @@ const FooterNew: React.FC<FooterProps> = ({ footerData }) => {
                     className="-ml-[2.5rem] mt-2 "
                     disabled={!isEmailValid}
                   >
-                    <Image
+                    <BlurImage
                       src="https://assets.nesscoindustries.com/public/assets/footer/send-button.svg"
                       alt="send Button"
                       className="lg:w-[2.5rem] lg:h-[2.5rem] "

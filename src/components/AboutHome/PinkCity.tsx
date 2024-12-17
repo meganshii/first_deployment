@@ -1,8 +1,6 @@
-// components/Gallery.tsx
 "use client";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import React, { useEffect, useState } from "react";
-// import { GoArrowRight } from "react-icons/go";
 import { AboutItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
 
@@ -46,7 +44,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
             >
               {!isMobile ? (
                 <div className="group relative h-full w-full overflow-hidden">
-                  <Image
+                  <BlurImage
                     src={item?.src}
                     alt={`Gallery image ${index + 1}`}
                     height={500}
@@ -56,7 +54,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
 
                   <div className="lg:visible invisible absolute inset-0 bg-black transition-transform duration-300 transform translate-y-full group-hover:translate-y-0 group-hover:bg-gradient-to-t from-black to-transparent bg-opacity-0"></div>
                   <div className=" absolute left-0 inset-0 flex flex-col items-center justify-center lg:transition-transform lg:duration-300 lg:transform lg:translate-y-full lg:group-hover:translate-y-0">
-                    <Image
+                    <BlurImage
                       src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731561436/flower_lcqfpb.svg"
                       alt="Overlay Icon"
                       width={100}
@@ -66,7 +64,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
                     <p className="text-white -mt-20 lg:text-sm font-regular lg:w-[15rem] text-xs w-35vw] text-center font-poppins">
                       {item?.paragraph}
                     </p>
-                    <Image
+                    <BlurImage
                       src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731561503/bottomlayer_uq6egh.svg"
                       alt="Overlay Icon"
                       width={100}
@@ -80,7 +78,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
                 <div className="flex flex-col border border-black md:h-[18rem] rounded-xl overflow-hidden h-[12rem]  w-full ">
                   <div className="flex">
                     <div className="w-1/2 p-1">
-                      <Image
+                      <BlurImage
                         src={item?.src}
                         alt={`Gallery image ${index + 1}`}
                         width={300}
@@ -89,7 +87,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
                       />
                     </div>
                     <div className="w-1/2 flex flex-col items-center p-1 relative">
-                      <Image
+                      <BlurImage
                         src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731562132/2_kkggie.svg"
                         alt="Overlay Icon"
                         width={100}
@@ -100,7 +98,7 @@ const PinkCity:React.FC <HomeLayoutProps> =({aboutData}) => {
                         {truncateText(item?.paragraph, 11.5)}{" "}
                         {/* Adjust maxWords as needed */}
                       </p>
-                      <Image
+                      <BlurImage
                         src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731562270/24_inch_9_gioc9p.svg"
                         alt="Overlay Icon"
                         width={100}

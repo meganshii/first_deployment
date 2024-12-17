@@ -1,8 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import React from "react"
-// import { SlBadge } from "react-icons/sl"
-import Image from "next/image"
-// import { FiAward } from "react-icons/fi"
+import BlurImage from "../ui/BlurImage";
 import { AboutItem } from "./types/constant";
 interface HomeLayoutProps{
   aboutData:AboutItem;
@@ -28,7 +26,7 @@ const Awards:React.FC<HomeLayoutProps>=({aboutData})=> {
             <Card key={index} className="overflow-hidden transition-shadow hover:shadow-lg hover:border-indigo-300  border lg:h-[17rem] rounded-xl h-[17rem]">
               <CardContent className=" flex flex-col items-center text-center">
                 <div className=" ">
-                 <Image
+                 <BlurImage
                  src={award?.image}
                  alt="certificate"
                  width={150}

@@ -1,6 +1,4 @@
-
-import Image from 'next/image';
-// import { SlArrowRight } from 'react-icons/sl';
+import BlurImage from "../ui/BlurImage";
 import styles from '../AboutCompany/about.module.css';
 import style  from './Sustainable.module.css'
 import { OurCompanyItem } from "./types/constant";
@@ -20,7 +18,7 @@ const SustainableD:React.FC<AboutLayoutProps>= ({companyData}) => {
        
         <div className={`${style?.imagecontainer} ` }>
         <div className="absolute w-full h-full ">
-          <Image 
+          <BlurImage 
             src={homecompanyData?.image}
             alt="Background Image"
             width={400}

@@ -1,5 +1,5 @@
 import React from "react"
-import Image from "next/image"
+import BlurImage from "../ui/BlurImage";
 import Arrow from "../../../public/assets/product/Arrow.png"
 import LinkUrl from "../LinkUrl";
 
@@ -32,7 +32,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                   <>{item?.label}</>
                 ) : (
                   <>
-                    <Image
+                    <BlurImage
                       src={Arrow}
                       height={800}
                       width={400}
@@ -50,7 +50,7 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
                 }`}
               >
                 {index !== 0 && (
-                  <Image
+                  <BlurImage
                     src={Arrow}
                     height={800}
                     width={400}

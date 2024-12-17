@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,6 +10,7 @@ import dynamic from "next/dynamic";
 // });
 import { PinkCityData } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
+import Image from "next/Image";
 interface AboutLayoutProps{
   pinkcityData:PinkCityData
 }

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import Style from "./about.module.css";
 import { OurCompanyItem } from "./types/constant";
 import React from "react";
@@ -51,7 +51,7 @@ const Grid: React.FC<AboutLayoutProps> = ({ companyData }) => {
               : ""
           }`}
         >
-          <Image
+          <BlurImage
             src={img?.src}
             alt={img?.alt}
             layout="fill"

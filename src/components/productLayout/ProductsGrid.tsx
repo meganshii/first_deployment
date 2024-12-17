@@ -1,10 +1,10 @@
 "use client";
-
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import gsap from "gsap";
 import { Label } from "@/components/ui/label";
-import EnquiryCart from "@/components/ui/EnquiryCart";
+import dynamic from "next/dynamic";
+const EnquiryCart = dynamic(() => import("@/components/ui/EnquiryCart"));
 import LinkUrl from "../LinkUrl";
 import Link from "next/link";
 
@@ -368,7 +368,7 @@ const Page2: React.FC<Page2Props> = ({
                   </div>
                 </div>
                 <div className="w-8 h-8 p-[0.2rem] bg-[#f5f5f5] border-solid border-[0.1rem] border-[#f5f5f5] hover:border-red-700 rounded-full flex items-center justify-center relative group">
-                  <Image
+                  <BlurImage
                     src={item?.image}
                     alt={item?.imageInformation}
                     width={400}
@@ -393,7 +393,7 @@ const Page2: React.FC<Page2Props> = ({
               <div className="flex justify-center items-center overflow-hidden">
                 <div className="mt-[1rem] lg:p-6 p-4 lg:h-[16rem] flex justify-center items-center">
                   <Link href={`${paramsthing}/${item?.link}`}>
-                    <Image
+                    <BlurImage
                       src={item?.img}
                       alt={`${item?.h2} ${item?.h1}`}
                       priority

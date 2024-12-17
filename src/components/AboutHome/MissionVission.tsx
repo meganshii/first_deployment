@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/about/carousel";
 import dynamic from "next/dynamic";
 import { AboutItem } from "./types/constant";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import LinkUrl from "../LinkUrl";
 
 const Pillar = dynamic(() => import("../Icons/about/Pillar"), { ssr: false });
@@ -92,7 +92,7 @@ const Missionvission: React.FC<HomeLayoutProps> = ({ aboutData }) => {
                           </h3>
                           <div className="lg:flex lg:flex-row flex flex-col items-center justify-center lg:space-x-20 lg:mr-10 w-full lg:mt-0 -mt-5">
                             <div className="flex-shrink-0 relative lg:left-0 flex justify-center lg:justify-start lg:bottom-0">
-                              <Image
+                              <BlurImage
                                 src={slide?.imageSrc}
                                 alt={slide?.title}
                                 height={100}

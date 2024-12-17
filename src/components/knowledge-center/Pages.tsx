@@ -1,6 +1,8 @@
 import React from "react";
 import HeroSection from "@/components/knowledge-center/HeroSection";
-import SubSection from "@/components/knowledge-center/SubSection";
+const SubSection = dynamic(
+  () => import("@/components/knowledge-center/SubSection")
+);
 const SectionComponent = dynamic(
   () => import("@/components/knowledge-center/Section")
 );

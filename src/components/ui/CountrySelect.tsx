@@ -9,7 +9,7 @@ import { Search, ChevronDown } from 'lucide-react';
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import countriesData from "./constant/CountryData";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 type Country = {
   name: string;
@@ -81,7 +81,7 @@ export default function CountrySelect({
             >
               <div className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-6 overflow-hidden rounded-sm">
                 {selectedCountry && (
-                  <Image
+                  <BlurImage
                     src={`https://flagcdn.com/w40/${selectedCountry.code.toLowerCase()}.png`}
                     width={200}
                     height={200}

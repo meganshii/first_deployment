@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { cn } from "../../lib/utils";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 export const TestimonialAnimation = ({
   items,
@@ -86,7 +86,7 @@ export const TestimonialAnimation = ({
                 <div className="p-1 lg:p-2 mt-[0.1rem] bg-white rounded-[1.3rem] flex flex-col justify-between h-[9rem] lg:h-[14.8rem] w-full lg:w-[15rem] md:h-[9rem] md:w-[11rem] sm:h-[8rem] sm:w-[10rem] mx-auto">
                   <div>
                     <div className="flex flex-row justify-between items-center">
-                      <Image
+                      <BlurImage
                         src={el?.src}
                         className="rounded-full h-6 w-6 lg:h-10 lg:w-10 object-cover"
                         height={40}
@@ -94,7 +94,7 @@ export const TestimonialAnimation = ({
                         alt={el?.username}
                       />
                       <div className="flex justify-end">
-                        <Image
+                        <BlurImage
                           height={32}
                           width={32}
                           src={el?.flag}

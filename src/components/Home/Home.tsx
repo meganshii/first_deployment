@@ -3,7 +3,9 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { HomeData } from "./types/constant";
 import FeatureProjects from "./FeatureProjects";
-import ReusableForm from "../Contact/ReuseableForm";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+  ssr: false,
+});
 const VideoCarousel = dynamic(() => import("../ui/HomeCaorusel"));
 
 interface HeroLayoutProps {

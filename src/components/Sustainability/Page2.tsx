@@ -3,7 +3,8 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { SustainabilityData,SecondPageData } from "./types/constant";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
+import Image from "next/Image";
 gsap.registerPlugin(ScrollTrigger);
 interface MainLayoutProps{
   sustainData:SustainabilityData;
@@ -229,7 +230,7 @@ const Page2:React.FC<MainLayoutProps> = ({sustainData}) => {
               <p className="text-center text-white lg:text-[1.07rem] text-sm p-8 font-[200] md:text-xl">
                 {data?.description}
               </p>
-            <Image
+            <BlurImage
                 src={data?.leafs}
                 alt="leafs"
                 width={55}

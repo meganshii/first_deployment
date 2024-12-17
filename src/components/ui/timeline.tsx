@@ -1,14 +1,14 @@
 "use client";
 import {  useScroll, useTransform, motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { OurCompanyItem } from "../AboutCompany/types/constant";
 
 interface AboutLayoutProps{
   companyData:OurCompanyItem;
 }
 
-export const Timeline:React.FC<AboutLayoutProps> = ({companyData}) => {
+const Timeline:React.FC<AboutLayoutProps> = ({companyData}) => {
   const homecompanyData=companyData?.Ourcompany[0]?.Data;
 
   // No need to pass it as props anymore
@@ -75,7 +75,7 @@ export const Timeline:React.FC<AboutLayoutProps> = ({companyData}) => {
       Your browser does not support the video tag.
               </video>
             ) : (
-                    <Image
+                    <BlurImage
                       src={item?.image}
                       alt={item.title || "banner"}
                       height={290}
@@ -111,3 +111,4 @@ export const Timeline:React.FC<AboutLayoutProps> = ({companyData}) => {
     </div>
   );
 };
+export default Timeline;

@@ -1,6 +1,6 @@
 import React from "react";
 import Arrow from "../../../public/assets/product/Arrow.png";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import LinkUrl from "../LinkUrl"
 
 interface BreadcrumbItem {
@@ -32,7 +32,7 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
                   <>{item?.label}</>
                 ) : (
                   <>
-                    <Image
+                    <BlurImage
                       src={Arrow}
                       height={24}
                       width={24}
@@ -50,7 +50,7 @@ const BreadcrumbProduct: React.FC<BreadcrumbProps> = ({ items }) => {
                 }`}
               >
                 {index !== 0 && (
-                  <Image
+                  <BlurImage
                     src={Arrow}
                     height={24}
                     width={24}

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 import { ScrollArea } from "../ui/ScrollArea";
 import { Checkbox } from "../ui/CheckBox";
 import YouTube from "../Navbar/NavLayouts/YoutubeSvg";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 interface VideosProps {
   videosData: VideosItem;
@@ -186,7 +186,7 @@ const VideoGallery: React.FC<VideosProps> = ({ videosData }) => {
   );
 
   return (
-    <div className="mt-[5.2rem] my-10 lg:mx-10 mx-5 font-poppins">
+    <div className="pt-[5.2rem] py-10 lg:px-10 px-5 font-poppins bg-[#f2f2f2]">
       <div className="lg:flex lg:space-x-6">
         {/* Sidebar for desktop */}
         <aside className="hidden lg:block w-[280px] bg-white rounded-xl lg:min-h-screen flex-shrink-0 lg:mr-6">
@@ -245,7 +245,7 @@ const VideoGallery: React.FC<VideosProps> = ({ videosData }) => {
                     <DialogTrigger asChild>
                       <div className="w-full h-[10rem] relative group cursor-pointer">
                         <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-60 transition-all duration-300 rounded-[1rem]" />
-                        <Image
+                        <BlurImage
                           height={600}
                           width={600}
                           src={`https://img.youtube.com/vi/${getYouTubeVideoId(

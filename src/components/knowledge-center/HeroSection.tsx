@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import "./style.css";
 import { gsap } from "gsap";
 import { KnowledgeCenterItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
 import BlurImage from "../ui/BlurImage";
+import Image from "next/Image";
 
 interface KnowledgeCenterProps {
   knowledgeCenterData: KnowledgeCenterItem;

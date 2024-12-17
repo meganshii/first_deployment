@@ -1,9 +1,10 @@
-import Founders from "@/components/AboutCompany/OurFounder";
-import Grid from "@/components/AboutCompany/Grid";
-import SustainableD from "@/components/AboutCompany/SustainableD";
-import OurStoryD from "@/components/AboutCompany/OurstoryD";
+import dynamic from "next/dynamic";
+const Grid = dynamic(() => import("@/components/AboutCompany/Grid"));
+const Founders = dynamic(() => import("@/components/AboutCompany/OurFounder"));
+const SustainableD = dynamic(() => import("@/components/AboutCompany/SustainableD"));
+const OurStoryD = dynamic(() => import("@/components/AboutCompany/OurstoryD"));
+const Timeline = dynamic(() => import("@/components/ui/timeline"));
 import AboutOurcompany from "@/components/AboutCompany/AboutOurcompany";
-import { Timeline } from "../ui/timeline";
 import { OurCompanyItem } from "./types/constant";
 
 interface MainLayoutProps {

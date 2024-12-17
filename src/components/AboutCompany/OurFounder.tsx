@@ -1,6 +1,5 @@
 "use client";
-
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import styles from "./about.module.css";
 import { OurCompanyItem } from "./types/constant";
 
@@ -20,7 +19,7 @@ const FounderCard: React.FC<{
   >
     {/* Image container */}
     <div className="lg:w-full lg:h-[70%] h-full w-[50%] lg:p-4">
-      <Image
+      <BlurImage
         className="transform 0.3 ease-in-out lg:rounded-t-xl rounded-xl  h-full w-full  object-cover object-[center_10%]"
         
         
@@ -43,7 +42,7 @@ const FounderCard: React.FC<{
           rel="noopener noreferrer"
           className={styles.linkedinIcon}
         >
-          <Image
+          <BlurImage
             src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731577680/linkedin_oynbsy.png"
             alt="LinkedIn"
             width={20}
@@ -71,7 +70,7 @@ const FounderCard: React.FC<{
           rel="noopener noreferrer"
           className=""
         >
-          <Image
+          <BlurImage
             src="https://res.cloudinary.com/dlti4o10e/image/upload/v1731577680/linkedin_oynbsy.png"
             alt="LinkedIn"
             width={20}

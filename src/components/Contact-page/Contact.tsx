@@ -152,7 +152,7 @@
 
 "use client";
 
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import styles from "./contact.module.css";
 import { ContactItem } from "./types/constant";
 import { useState } from "react";
@@ -265,7 +265,7 @@ const Contact: React.FC<MainLayoutProps> = ({ contactData }) => {
   return (
     <FormProvider>
       <section
-        className={`${styles.contact} lg:left-9 left-2 mt-[7rem] bottom-10 rounded-[2rem] bg-red-200`}
+        className={`rounded-[2rem] bg-white`}
       >
         <div className={`${styles.contactshape}`}></div>
         <div className="container mx-auto p-6">
@@ -285,7 +285,7 @@ const Contact: React.FC<MainLayoutProps> = ({ contactData }) => {
                   style={{ cursor: "pointer" }}
                 >
                   <div className="flex items-start mb-6 ">
-                    <Image
+                    <BlurImage
                       src="https://assets.nesscoindustries.com/public/assets/contact/location-icon1.webp"
                       alt="location"
                       width={80}
@@ -312,7 +312,7 @@ const Contact: React.FC<MainLayoutProps> = ({ contactData }) => {
                 <h2 className="border-gray-400 border-[0.10rem] -ml-6 lg:w-[35rem]" />
                 
                   <a href="mailto:info@nesscoindia.com" className="flex items-start mb-6 w-max">
-                    <Image
+                    <BlurImage
                       src="https://assets.nesscoindustries.com/public/assets/contact/email-icon.webp"
                       alt="Email"
                       width={80}
@@ -334,7 +334,7 @@ const Contact: React.FC<MainLayoutProps> = ({ contactData }) => {
 
                 
                   <a href="tel:+91 95494 44484" className="flex items-start  h-full w-max">
-                    <Image
+                    <BlurImage
                       src="https://assets.nesscoindustries.com/public/assets/contact/contact-icon.webp"
                       alt="Phone"
                       width={80}

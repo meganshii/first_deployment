@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import LandingPage from "./LandingPage";
-import SecondPage from "./SecondPage";
+import dynamic from "next/dynamic";
+const SecondPage = dynamic(() => import("./SecondPage"));
 import { OurStrengthItem } from "./types/constant";
 
 interface MainLayoutprops {

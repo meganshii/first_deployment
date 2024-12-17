@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import Breadcrumb from "./Breadcrumb";
@@ -85,7 +85,7 @@ const Modal: React.FC<ModalProps> = ({
             initial="hidden"
             animate="visible"
           >
-            <Image
+            <BlurImage
               src={image}
               alt={title}
               width={600}

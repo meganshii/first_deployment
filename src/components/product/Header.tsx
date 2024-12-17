@@ -2,7 +2,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ProductItem } from "./types/constant";
 import Carousal from "@/components/product/Carousal";
-import ReusableForm from "../Contact/ReuseableForm";
+import dynamic from "next/dynamic";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+ssr: false,});
 
 // Debounce function to limit the rate of invoking a function
 const debounce = <T extends (...args: unknown[]) => void>(

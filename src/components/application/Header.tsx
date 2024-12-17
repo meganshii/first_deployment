@@ -3,7 +3,9 @@ import React, { useEffect, useRef } from "react";
 import { ApplicationItem } from "./types/constant";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ReusableForm from "../Contact/ReuseableForm";
+import dynamic from "next/dynamic";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+ssr: false,});
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,14 +1,9 @@
 "use client";
-
-import Image from "next/image";
-
+import BlurImage from "../ui/BlurImage";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
-// import { IoAddCircle } from "react-icons/io5";
-// import { RxCross2 } from "react-icons/rx";
 import dynamic from "next/dynamic";
-// import { IoIosCloseCircle } from "react-icons/io";
 import { AboutItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
 
@@ -163,7 +158,7 @@ const ExpandableCardDemo: React.FC<HomeLayoutProps> = ({ aboutData }) => {
                     layoutId={`image-${active?.title}-${id}`}
                     className="absolute inset-0 flex items-center justify-center z-20"
                   >
-                    <Image
+                    <BlurImage
                       width={200}
                       height={200}
                       src={active?.src}

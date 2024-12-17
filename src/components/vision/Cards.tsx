@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { VisionItem } from "./types/constant";
 
 const imageWidths = [
@@ -161,7 +161,7 @@ const Page2: React.FC<VisionProps> = ({ visionData }) => {
                       )}
                       {index === 2 && (
                         <div className="flex">
-                          <Image
+                          <BlurImage
                             src={item?.listImg}
                             alt={item?.point}
                             width={100}
@@ -177,7 +177,7 @@ const Page2: React.FC<VisionProps> = ({ visionData }) => {
               </div>
             )}
 
-            <Image
+            <BlurImage
               src={card?.image}
               alt="Content"
               width={100}

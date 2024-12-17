@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { X, ShoppingCart } from "lucide-react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -194,7 +194,7 @@ export default function EnquiryComponent({
                   >
                     <div className="absolute top-2 left-2 w-1.5 h-1.5 bg-red-700 rounded-full" />
                     <div className="enquiry-item-image relative mr-3 flex-shrink-0">
-                      <Image
+                      <BlurImage
                         src={item.image}
                         alt={item.name}
                         width={60}
@@ -247,7 +247,7 @@ export default function EnquiryComponent({
                           {item.name}
                         </div>
                         <div className="bg-white w-full rounded-[0.5rem] h-auto enquiry-item-image">
-                          <Image
+                          <BlurImage
                             src={item.image}
                             alt={item.name}
                             width={176}

@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
+const Page4 = dynamic(() => import("@/components/blogs/ForYou"));
+// const Page5 = dynamic(() => import("@/components/blogs/Sources"));
 import Page1 from "@/components/blogs/Filter";
 import Page2 from "@/components/blogs/AllBlogs";
 import Page3 from "@/components/blogs/FeaturedBlogs";
-import Page4 from "@/components/blogs/ForYou";
-// import Page5 from "@/components/blogs/Sources";
 import { BlogsItem } from "./types/constant";
 
 interface BlogsProps{
@@ -23,7 +24,7 @@ const Pages:React.FC <BlogsProps>= ({blogsData}) => {
   return (
     <>
       <main>
-        <div className="flex lg:flex-row flex-col lg:mt-0 mt-14">
+        <div className="flex lg:flex-row flex-col lg:mt-0 mt-14 bg-[#f2f2f2]">
           <div className="lg:w-[20%] ml-4 sticky top-0 lg:h-[40rem] hidden lg:block">
             <Page1 onCategorySelect={handleCategorySelect} blogsData={blogsData} />
           </div>

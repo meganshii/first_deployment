@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css"; // Import CSS for styling
 import AboutUs from "../../../public/assets/AboutUs.png";
@@ -15,7 +15,7 @@ const CupFormactionProcess = () => {
 
         <div className="relative w-full h-full rounded-2xl">
           <Zoom>
-            <Image
+            <BlurImage
               className="w-full h-full rounded-2xl"
               height={800}
               width={800}

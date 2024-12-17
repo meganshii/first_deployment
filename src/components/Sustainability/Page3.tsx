@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SustainabilityData, ThirdPageData } from "./types/constant";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 interface MainLayoutProps {
   sustainData: SustainabilityData;
@@ -49,7 +49,7 @@ const Page3: React.FC<MainLayoutProps> = ({ sustainData }) => {
           className="bg-[#388E3C] lg:h-[29rem] h-[43rem] relative lg:w-full w-[22rem] md:w-full mx-4 mt-[10rem] lg:mx-[5rem] lg:ounded-[2rem] rounded-2xl"
           ref={screen}
         >
-          <Image
+          <BlurImage
             src="https://assets.nesscoindustries.com/public/assets/about/sustainability/sustainability-bushes.webp"
             alt="branchLeaves"
             height={2000}

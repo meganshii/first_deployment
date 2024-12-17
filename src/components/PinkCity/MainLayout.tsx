@@ -1,8 +1,9 @@
 import LandingPage from "@/components/PinkCity/LandingPage"
-import SecondPage from "@/components/PinkCity/SecondPage"
-import Bluepage from "@/components/PinkCity/Bluepage"
-import PinkPage from "@/components/PinkCity/PinkPage"
-import Photocolag from "@/components/PinkCity/Photocolag"
+import dynamic from "next/dynamic";
+const SecondPage = dynamic(() => import("@/components/PinkCity/SecondPage"));
+const Bluepage = dynamic(() => import("@/components/PinkCity/Bluepage"));
+const PinkPage = dynamic(() => import("@/components/PinkCity/PinkPage"));
+const Photocolag = dynamic(() => import("@/components/PinkCity/Photocolag"));
 import { PinkCityData } from "./types/constant"
 
 interface MainLayoutProps{

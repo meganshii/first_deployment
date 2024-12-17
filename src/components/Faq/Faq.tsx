@@ -56,9 +56,9 @@ const FAQ: React.FC<MainLayoutProps> = ({ faqData }) => {
   );
 
   return (
-    <>
+    <div className="bg-[#f2f2f2]">
       <div className="bg-white z-50 h-auto w-full fixed top-0 left-0 right-0 lg:static lg:bg-transparent">
-        <h1 className="text-3xl lg:text-5xl pt-14 lg:pt-20 px-4 lg:px-10 pb-6 lg:pb-10 font-poppins bg-gradient-to-r from-[#483d73] via-red-700 to-red-700 bg-clip-text text-transparent relative font-extrabold">
+        <h1 className="text-3xl lg:text-5xl pt-14 lg:pt-20 px-4 lg:px-10 pb-6 lg:pb-10 font-poppins bg-gradient-to-r from-[#483d73] to-red-700 bg-clip-text text-transparent relative font-extrabold w-max">
           FAQs
         </h1>
         <Button
@@ -212,7 +212,7 @@ const FAQ: React.FC<MainLayoutProps> = ({ faqData }) => {
           </ScrollArea>
         </main>
       </div>
-    </>
+    </div>
   );
 };
 

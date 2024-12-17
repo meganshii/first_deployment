@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import React from "react";
 import PositionAwareButton from "../ui/PositionAwareButton";
 
@@ -55,7 +55,7 @@ const MachineCard: React.FC<{ machine: (typeof machineData)[0] }> = ({
     <div className="relative flex flex-col h-48 w-72 bg-[#483d73] rounded-bl-[2rem] m-4">
       {/* Circular Image Container */}
       <div className="absolute top-1/2 right-0 transform -translate-y-1/2 -mr-20 flex items-center justify-center h-52 w-52 bg-white border-[0.1rem] border-[#483d78] rounded-full">
-        <Image
+        <BlurImage
           src={machine?.image}
           alt={machine?.title}
           height={200}
@@ -67,7 +67,7 @@ const MachineCard: React.FC<{ machine: (typeof machineData)[0] }> = ({
       <div className="flex justify-between -ml-[1.2rem]">
         <div className="flex items-center justify-center w-32 h-14 p-2 ml-4 -mt-4 bg-gray-200 border-[0.1rem] border-[#483d78] rounded-[2rem]">
           <div className="flex items-center justify-center w-1/2 h-[3.2rem] p-2 rounded-full">
-            <Image
+            <BlurImage
               src={machine?.icon}
               alt={`${machine?.title} Icon`}
               width={20}

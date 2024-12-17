@@ -1,6 +1,7 @@
 import React from "react";
 import { ClienteleItem } from "./types/constant";
-import Grid from "./Grid";
+import dynamic from "next/dynamic";
+const Grid = dynamic(() => import("./Grid"));
 import Clientele from "./Clientele";
 
 interface MainLayoutProps {

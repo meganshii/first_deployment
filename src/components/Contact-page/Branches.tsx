@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import React from "react";
 import { ContactItem } from "./types/constant";
 
@@ -13,22 +13,22 @@ const highlight=contactData?.contact[0]?.heading[0]?.highlight;
 const branchesData=contactData?.contact[0]?.branchesData;
   return (
     <>
-      <section className="py-12 h-full ">
-        <div className="container mx-auto px-10">
+      <section className="py-12 h-full w-full mt-8">
+        <div className="container w-full">
           <h2 className="text-4xl font-medium font-poppins text-center ">
             {title} <span className="text-red-700">{highlight}</span>
           </h2>
 
-          <div className="grid grid-cols-1 grid-rows-5 lg:h-[60vh] lg:grid-cols-5 gap-8 mt-24 justify-center">
+          <div className="grid grid-cols-1 grid-rows-5 lg:h-[60vh] lg:grid-cols-5 gap-8 mt-12 justify-center w-full">
             {branchesData?.map((branch) => (
               <div
                 key={branch?.id}
-                className="bg-white text-center p-6 shadow-lg h-[24rem] rounded-[2rem] relative"
+                className="bg-white text-center p-6 shadow-lg h-[24rem] rounded-[2rem] relative w-full"
               >
                 <div className=" flex relative">
                   {/* Flag on the left */}
                   <div className="left-0 top-0">
-                    <Image
+                    <BlurImage
                       src={branch?.flag}
                       width={80}
                       height={80}
@@ -39,7 +39,7 @@ const branchesData=contactData?.contact[0]?.branchesData;
 
                   {/* Location image on the right, positioned at the top */}
                   <div className="absolute top-2 right-0">
-                    <Image
+                    <BlurImage
                       src="https://assets.nesscoindustries.com/public/assets/contact/location-icon1.webp"
                       width={70}
                       height={70}
@@ -56,7 +56,7 @@ const branchesData=contactData?.contact[0]?.branchesData;
                   {branch?.address}
                 </p>
                 <div className="absolute bottom-0 px-5 left-0">
-                  <Image
+                  <BlurImage
                     src={branch?.image}
                     width={300}
                     height={300}

@@ -1,9 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import Page1 from "@/components/application/Header";
-import Page2 from "@/components/application/SelectProduct";
-import Page3 from "@/components/application/Technology";
-import Page4 from "@/components/application/CustomizedProjects";
+import dynamic from "next/dynamic";
+const Page2 = dynamic(() => import("@/components/application/SelectProduct"));
+const Page3 = dynamic(() => import("@/components/application/Technology"));
+const Page4 = dynamic(() => import("@/components/application/CustomizedProjects"));
 import { ApplicationItem } from "./types/constant";
 
 export interface Product {

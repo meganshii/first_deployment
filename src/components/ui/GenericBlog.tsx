@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { motion } from "framer-motion";
 import { BlogsLayoutItem } from "../types/generic";
 
@@ -82,7 +82,7 @@ const Page1: React.FC<BlogsLayoutProps> = ({ blogsLayoutData }) => {
       </div>
       <div className="bg-black lg:h-[7rem] h-[3rem] rounded-b-2xl lg:mb-4 mb-2 relative w-full">
         <div className="lg:px-[14%] px-[4%] absolute top-0">
-          <Image
+          <BlurImage
             className="object-cover lg:h-[18rem] h-[8rem] rounded-3xl lg:mt-4 mt-2"
             width={1000}
             height={1000}

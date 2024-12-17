@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 
 interface Category {
   name: string;
@@ -114,7 +114,7 @@ export default function Stepper({ onStepChange, categories }: StepperProps) {
                       }`}
                     >
                       {visibleSteps.includes(index) && (
-                        <Image
+                        <BlurImage
                           className="h-6 w-6"
                           src={icon}
                           alt={`${transformString(category?.name)}`}

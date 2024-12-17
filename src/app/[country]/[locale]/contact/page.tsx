@@ -1,9 +1,10 @@
 import { ContactItem } from "@/components/Contact-page/types/constant";
 import { Metadata } from "next";
 import { cookies } from "next/headers";
+import dynamic from "next/dynamic";
+const Branches = dynamic(() => import("@/components/Contact-page/Branches"));
+const Reach = dynamic(() => import("@/components/Contact-page/Reach"));
 import Contact from "@/components/Contact-page/Contact";
-import Branches from "@/components/Contact-page/Branches";
-import Reach from "@/components/Contact-page/Reach";
 import { unstable_setRequestLocale } from "next-intl/server";
 import React from "react";
 import { getBaseUrl } from "@/app/api/environment";
@@ -154,10 +155,10 @@ export default async function ContactPage({ params: { locale } }: Props) {
   }
 
   return (
-    <main>
+    <div className="bg-[#f2f2f2] px-12 pt-20">
       <Contact contactData={contactData} />
       <Branches contactData={contactData} />
       <Reach contactData={contactData} />
-    </main>
+    </div>
   );
 }

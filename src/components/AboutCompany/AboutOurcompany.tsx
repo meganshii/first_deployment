@@ -1,9 +1,11 @@
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { gsap } from "gsap";
+import dynamic from "next/dynamic";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+ssr: false,});
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OurCompanyItem } from "./types/constant";
 import React from "react";
-import ReusableForm from "../Contact/ReuseableForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +93,7 @@ const Home: React.FC<AboutLayoutProps> = ({ companyData }) => {
                 key={index}
                 className={`flex flex-col items-center ${imagebottoms[index]}`}
               >
-                <Image
+                <BlurImage
                   src={item?.img}
                   alt="Content"
                   width={100}

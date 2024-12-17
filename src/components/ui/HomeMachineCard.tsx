@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import ReusableForm from "../Contact/ReuseableForm";
 import {
@@ -87,7 +86,7 @@ const Card = ({ card, activeStep }: { card: Card; activeStep: string }) => {
                     !card?.speed && !card?.unit ? "ml-4" : "ml-0"
                   }`}
                 >
-                  <Image
+                  <BlurImage
                     src={card?.icon}
                     alt={`${transformString(card?.secondLink)}`}
                     height={100}
@@ -133,7 +132,7 @@ const Card = ({ card, activeStep }: { card: Card; activeStep: string }) => {
             </div>
 
             <div className="bg-[#f2f2f2] overflow-hidden w-full h-full rounded-2xl flex flex-col items-center">
-              <Image
+              <BlurImage
                 src={card?.image}
                 alt={`${card?.title}`}
                 height={640}
@@ -187,7 +186,7 @@ const Card = ({ card, activeStep }: { card: Card; activeStep: string }) => {
                     !card?.speed && !card?.unit ? "ml-4" : "ml-0"
                   }`}
                 >
-                  <Image
+                  <BlurImage
                     src={card?.icon}
                     className="h-16 w-auto"
                     alt="icon"

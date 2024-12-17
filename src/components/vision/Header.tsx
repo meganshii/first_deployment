@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { VisionItem } from "./types/constant";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -94,7 +94,7 @@ const Page1: React.FC<VisionProps> = ({ visionData }) => {
                 key={index}
                 className={`flex flex-col items-center ${imagebottoms[index]}`}
               >
-                <Image
+                <BlurImage
                   src={item?.img}
                   alt="Content"
                   width={100}

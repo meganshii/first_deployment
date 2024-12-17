@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "@/components/ui/BlurImage";
+import Image from "next/Image";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 import { motion } from "framer-motion";
@@ -260,7 +261,7 @@ const Machine: React.FC<MachineProps> = ({
                     className="h-full object-contain w-full"
                   />
                   <div className="absolute top-0 right-0 p-2">
-                    <Image
+                    <BlurImage
                       src={mimage}
                       height={60}
                       width={60}
@@ -347,7 +348,7 @@ const Machine: React.FC<MachineProps> = ({
                     onClick={() => setSelectedImage(image)}
                   >
                     <div className="relative w-full h-full flex">
-                      <Image
+                      <BlurImage
                         src={image}
                         alt={`Image ${index}`}
                         width={196}

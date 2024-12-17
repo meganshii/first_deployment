@@ -1,7 +1,6 @@
 "use client";
-
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import { ApplicationItem } from "./types/constant";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -201,7 +200,7 @@ const Page4: React.FC<CombinedProps> = ({ applicationData, selectedProduct }) =>
                       imageRefs.current[idx] = el;
                     }}
                   >
-                    <Image
+                    <BlurImage
                       className="object-fill h-full w-full"
                       width={300}
                       height={300}
@@ -223,7 +222,7 @@ const Page4: React.FC<CombinedProps> = ({ applicationData, selectedProduct }) =>
               {selectedImage?.title2}
             </h2>
             <div className="relative w-full h-64">
-              <Image
+              <BlurImage
                 className="object-cover w-full h-full rounded-lg"
                 src={selectedImage?.img}
                 alt={selectedImage?.title2}

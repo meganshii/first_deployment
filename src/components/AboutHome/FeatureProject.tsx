@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import React, { useState, useEffect, useRef } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -189,7 +189,7 @@ const FeatureProject: React.FC<HomeLayoutProps> = ({ aboutData }) => {
               className="flex-shrink-0 w-full flex flex-col items-center mb-8 border p-4 bg-[#ededed] rounded-2xl"
             >
               <div className="h-[10rem] rounded-2xl">
-                <Image
+                <BlurImage
                   src={machine?.mobileimg}
                   alt={machine?.title}
                   width={300}
@@ -242,7 +242,7 @@ const FeatureProject: React.FC<HomeLayoutProps> = ({ aboutData }) => {
 
           {/* Center: Image */}
           <div className="relative flex justify-center lg:justify-center lg:w-1/3 lg:mx-0 rounded-2xl">
-            <Image
+            <BlurImage
               src={selectedMachine?.mainImage}
               alt={selectedMachine?.title}
               width={600}
@@ -311,7 +311,7 @@ const FeatureProject: React.FC<HomeLayoutProps> = ({ aboutData }) => {
                 }`}
                 onClick={() => handleMachineClick(machine)}
               >
-                <Image
+                <BlurImage
                   src={machine?.mainImage}
                   alt={machine?.title}
                   width={1000}

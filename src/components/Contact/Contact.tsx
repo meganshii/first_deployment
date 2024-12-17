@@ -3,7 +3,9 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
 import { FormProvider } from "@/app/[country]/[locale]/context/FormContext";
-import ReusableForm from "./ReuseableForm";
+import dynamic from "next/dynamic";
+const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
+ssr: false,});
 
 interface EnquiryFormProps {
   formId?: string;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import BlurImage from "../../ui/BlurImage";
 import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 
@@ -98,7 +98,7 @@ const MachineGrid: React.FC<MachineGridProps> = ({ supporItem }) => {
               variants={imageVariants}
             >
               <div className="relative w-full h-full flex justify-center items-center">
-                <Image
+                <BlurImage
                   src={item?.image?.src}
                   alt={item?.title}
                   width={96}

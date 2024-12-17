@@ -1,14 +1,9 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Page4 from "./carasoul";
-// import MobileCarousel from "./Mobilecarasouel";
 import dynamic from "next/dynamic";
-
 const MobileCarousel = dynamic(() => import("./Mobilecarasouel"));
-
-const Ourcompanybgimg =dynamic (()=>import("../Icons/about/Ourcompanybgimg"),{ssr:false})
-
+const Ourcompanybgimg =dynamic (()=>import("../Icons/about/Ourcompanybgimg"),{ssr:false});
 import { AboutItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
 

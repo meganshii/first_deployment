@@ -1,16 +1,17 @@
 "use client";
 import React, { useRef } from "react";
 import NavLinksDemo from "@/components/Home/NavLinks";
+import dynamic from "next/dynamic";
 import Machine from "@/components/Products/machine/MachineHome";
-import ProductDescription from "@/components/Products/ProductDescription";
-import CupFormactionProcess from "@/components/Products/CupFormactionProcess";
+const ProductDescription = dynamic(() => import("@/components/Products/ProductDescription"));
+const CupFormactionProcess = dynamic(() => import("@/components/Products/CupFormactionProcess"));
+const ProductApplication = dynamic(() => import("@/components/Products/ProductApplication"));
+const RelatedProducts = dynamic(() => import("@/components/Products/RelatedProducts"));
+const ProcessFlow = dynamic(() => import("@/components/Products/ProcessFlow"));
+const TechnicalSpecifications = dynamic(() => import("@/components/Products/TechnicalSpecification"));
+const FaqProducts = dynamic(() => import("./FaqSection"));
 import { SignupFormDemoProduct } from "@/components/Contact/CustomProductForm";
-import ProductApplication from "@/components/Products/ProductApplication";
-import RelatedProducts from "@/components/Products/RelatedProducts";
-import ProcessFlow from "@/components/Products/ProcessFlow";
 import { MachineType } from "./types/constant";
-import TechnicalSpecifications from "./TechnicalSpecification";
-import FaqProducts from "./FaqSection";
 
 interface ProductLayoutProps {
   id: string;

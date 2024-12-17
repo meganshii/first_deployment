@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import Arrow from "../../../public/assets/Support/RedirectionArrowImg.svg";
 import LinkUrl from "@/components/LinkUrl";
 import ReusableForm from "../Contact/ReuseableForm";
@@ -58,7 +58,7 @@ const Header: React.FC<CardsProps> = ({
         </div>
         </div>
         <div className="lg:w-1/2 flex justify-end">
-          <Image
+          <BlurImage
             src={img}
             alt={"Parts"}
             width={400}
@@ -80,7 +80,7 @@ const Header: React.FC<CardsProps> = ({
             <h2 className="lg:group-hover:text-[#483d73] lg:text-black text-[#483d73] lg:text-2xl text-2xl font-medium text-center">
               {item?.title}
             </h2>
-            <Image
+            <BlurImage
               src={item?.img}
               alt={"Parts"}
               width={400}
@@ -89,7 +89,7 @@ const Header: React.FC<CardsProps> = ({
             />
 
               <div className="absolute bottom-2 right-2 lg:group-hover:bg-[#483d7359] p-2 rounded-full transition-all duration-300">
-                <Image
+                <BlurImage
                   src={Arrow}
                   alt={"ReDirection Arrow"}
                   width={400}

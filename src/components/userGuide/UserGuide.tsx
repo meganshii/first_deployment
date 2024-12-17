@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import BlurImage from "../ui/BlurImage";
 import React, { useEffect, useId, useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -234,7 +234,7 @@ export const UserGuide: React.FC<UserGuideProps> = ({ userGuideData }) => {
                     <motion.div
                       layoutId={`image-${card?.title}-${index}-${id}`}
                     >
-                      <Image
+                      <BlurImage
                         width={400}
                         height={400}
                         src={card?.src}
@@ -328,7 +328,7 @@ export const UserGuide: React.FC<UserGuideProps> = ({ userGuideData }) => {
                 <motion.div
                   layoutId={`image-${activeCard?.title}-${activeCard?.index}-${id}`}
                 >
-                  <Image
+                  <BlurImage
                     priority
                     width={200}
                     height={200}
@@ -490,14 +490,14 @@ export const UserGuide: React.FC<UserGuideProps> = ({ userGuideData }) => {
             {selectedDownloadCard && (
               <div className="flex w-full h-full">
                 <div className="w-1/2 h-full bg-gray-50 -mt-4 lg:block hidden relative">
-                  <Image
+                  <BlurImage
                     src="https://res.cloudinary.com/dfryvystt/image/upload/v1731482365/Logo_ilp80b.png"
                     alt="Logo"
                     width={64}
                     height={64}
                     className="absolute left-4 top-4 z-10"
                   />
-                  <Image
+                  <BlurImage
                     src={selectedDownloadCard?.src}
                     alt="Selected Card"
                     height={400}
