@@ -64,6 +64,5 @@ const nextConfig = {
     ],
   },
   swcMinify: true,
- 
 };
 export default withBundleAnalyzerPlugin(withNextIntl(nextConfig));
