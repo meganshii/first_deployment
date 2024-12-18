@@ -64,6 +64,5 @@ const nextConfig = {
     ],
   },
   swcMinify: true,
-  output: 'standalone', // Enable standalone build for deployment
 };
 export default withBundleAnalyzerPlugin(withNextIntl(nextConfig));
