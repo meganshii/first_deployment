@@ -7,7 +7,7 @@ import { Label } from "@radix-ui/react-label";
 import { ApplicationLayoutItem } from "./types/constant";
 import Link from "next/link";
 import { countryCODE, languageCODE } from "../Navbar/nav-menue";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const EnquiryCart = dynamic(() => import("@/components/ui/EnquiryCart"));
 import BlurImage from "../ui/BlurImage";
 

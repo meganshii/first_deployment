@@ -1,5 +1,5 @@
 import LandingPage from "@/components/PinkCity/LandingPage"
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const SecondPage = dynamic(() => import("@/components/PinkCity/SecondPage"));
 const Bluepage = dynamic(() => import("@/components/PinkCity/Bluepage"));
 const PinkPage = dynamic(() => import("@/components/PinkCity/PinkPage"));

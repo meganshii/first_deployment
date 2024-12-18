@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ProductItem } from "./types/constant";
 import gsap from "gsap";
 import { Label } from "@radix-ui/react-label";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const EnquiryCart = dynamic(() => import("@/components/ui/EnquiryCart"));
 import Link from "next/link";
 import { countryCODE, languageCODE } from "../Navbar/nav-menue";

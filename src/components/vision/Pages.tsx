@@ -1,7 +1,7 @@
 import React from "react";
 import Page1 from "@/components/vision/Header";
 const Page2 = dynamic(() => import("@/components/vision/Cards"));
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { VisionItem } from "./types/constant";
 
 interface VisionProps {

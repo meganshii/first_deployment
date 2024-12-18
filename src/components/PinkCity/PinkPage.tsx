@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./secondpage.module.css";
 const Bird = dynamic(() => import("./Bird"), { ssr: false });
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { PinkCityData } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
 import Image from 'next/image';

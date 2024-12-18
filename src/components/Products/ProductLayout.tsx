@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import NavLinksDemo from "@/components/Home/NavLinks";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import Machine from "@/components/Products/machine/MachineHome";
 const ProductDescription = dynamic(() => import("@/components/Products/ProductDescription"));
 const CupFormactionProcess = dynamic(() => import("@/components/Products/CupFormactionProcess"));

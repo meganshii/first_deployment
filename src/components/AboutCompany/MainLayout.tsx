@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Grid = dynamic(() => import("@/components/AboutCompany/Grid"));
 const Founders = dynamic(() => import("@/components/AboutCompany/OurFounder"));
 const SustainableD = dynamic(() => import("@/components/AboutCompany/SustainableD"));

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../Styles/FeatureCaraousel.module.css";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const BlurImage=dynamic(()=>import("@/components/ui/BlurImage"))
 interface FeatureCaraouselProps {
   type?: string;

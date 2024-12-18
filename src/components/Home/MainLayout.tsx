@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { motion, useInView } from "framer-motion";
 import Hero from "@/components/Home/Home";
 import { HomeData } from "./types/constant";

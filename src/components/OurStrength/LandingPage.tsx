@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { OurStrengthItem} from "./types/constant";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
 ssr: false,});
 

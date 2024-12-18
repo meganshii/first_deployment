@@ -5,7 +5,7 @@ import { Card, CardContent } from "../ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/about/carousel";
 import { AboutItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 
 interface HomeLayoutProps {
   aboutData: AboutItem;

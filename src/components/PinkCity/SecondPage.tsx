@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./secondpage.module.css";
 const DashedLineWithImage = dynamic(() => import("./Elephant"), { ssr: false });
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 // const Brownmandala = dynamic(() => import("../Icons/about/Brownmandala"), {
 //   ssr: false,
 // });

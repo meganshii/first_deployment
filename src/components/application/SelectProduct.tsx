@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { ApplicationItem } from "./types/constant";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Modal = dynamic(() => import("./Modal"));
 import { Product } from "./Pages";
 import BlurImage from "../ui/BlurImage";

@@ -1,5 +1,5 @@
 // components/Gallery.tsx
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { PinkCityData } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
 

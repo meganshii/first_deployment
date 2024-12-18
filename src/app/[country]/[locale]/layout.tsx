@@ -6,7 +6,7 @@ import {
   CountryCode,
   countryNames,
 } from "@/components/Constants/Navbar/config";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { locales, validCountryISOs } from "@/i18n";
 import { FormProvider } from "./context/FormContext";
 import ContactIcons from "@/components/Contact/ContactIcon";

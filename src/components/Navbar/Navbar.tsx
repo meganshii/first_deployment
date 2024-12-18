@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { countryCODE, languageCODE, Menu } from "./nav-menue";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const MenuItem = dynamic(() => import("./nav-menue"));
 const ContactForm = dynamic(() => import("../Contact/Contact"));
 const SVGComponent = dynamic(() => import("./BlueLogo"));

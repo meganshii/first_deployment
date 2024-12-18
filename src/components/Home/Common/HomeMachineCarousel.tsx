@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 
 // Dynamically import components
 const Carousel = dynamic(() => import("@/components/ui/HomeMachine-cards-carousel"));

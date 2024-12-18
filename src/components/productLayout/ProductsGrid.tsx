@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import BlurImage from "../ui/BlurImage";
 import gsap from "gsap";
 import { Label } from "@/components/ui/label";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const EnquiryCart = dynamic(() => import("@/components/ui/EnquiryCart"));
 import LinkUrl from "../LinkUrl";
 import Link from "next/link";

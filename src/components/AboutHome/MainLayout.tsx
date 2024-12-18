@@ -1,6 +1,6 @@
 "use client";
 import {  useRef } from "react";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Missionvission = dynamic(() => import("@/components/AboutHome/MissionVission"));
 const OurCompany = dynamic(() => import("@/components/AboutHome/OurCompany"));
 const PinkCity = dynamic(() => import("@/components/AboutHome/PinkCity"));

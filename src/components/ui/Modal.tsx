@@ -3,7 +3,7 @@ import BlurImage from "../ui/BlurImage";
 import { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import Breadcrumb from "./Breadcrumb";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { Item } from "@/type";
 const PositionAwareButton = dynamic(() => import("./PositionAwareButton"));
 interface ModalProps {

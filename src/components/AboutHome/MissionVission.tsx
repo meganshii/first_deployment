@@ -10,7 +10,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/about/carousel";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { AboutItem } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
 import LinkUrl from "../LinkUrl";

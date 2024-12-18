@@ -1,6 +1,6 @@
 import React from "react";
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { HomeData } from "./types/constant";
 import FeatureProjects from "./FeatureProjects";
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import LandingPage from "./LandingPage";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const SecondPage = dynamic(() => import("./SecondPage"));
 import { OurStrengthItem } from "./types/constant";
 

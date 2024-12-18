@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Page1 from "@/components/productLayout/Header";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Page2 = dynamic(() => import("@/components/productLayout/ProductsGrid"));
 import { notFound, useParams } from "next/navigation";
 import { ProductLayout } from "./types/constant";

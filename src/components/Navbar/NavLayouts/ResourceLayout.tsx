@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { NavbarData } from "../types/constant";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { countryCODE, languageCODE } from "../nav-menue";
 
 const LottieAnimation = dynamic(

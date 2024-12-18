@@ -2,7 +2,7 @@
 import React from "react";
 import { SustainabilityData } from "./types/constant";
 import Page1 from "./Page1"
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Page2 = dynamic(() => import("./Page2"));
 const Page3 = dynamic(() => import("./Page3"));
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Page4 = dynamic(() => import("@/components/blogs/ForYou"));
 // const Page5 = dynamic(() => import("@/components/blogs/Sources"));
 import Page1 from "@/components/blogs/Filter";

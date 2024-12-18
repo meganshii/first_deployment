@@ -9,7 +9,7 @@ const Page4 = dynamic(
   () => import("@/components/applicationLayout/RelatedMachines")
 );
 const Page5 = dynamic(() => import("@/components/applicationLayout/FAQ"));
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { ApplicationLayoutItem } from "./types/constant";
 import { FaqItem, Category } from "../Faq/types/constant";
 

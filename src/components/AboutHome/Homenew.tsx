@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { AboutItem } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
 ssr: false,});
 

@@ -3,7 +3,7 @@
 import React from "react";
 import { Toaster } from "react-hot-toast";
 import { FormProvider } from "@/app/[country]/[locale]/context/FormContext";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
 ssr: false,});
 

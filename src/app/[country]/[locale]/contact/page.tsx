@@ -1,7 +1,7 @@
 import { ContactItem } from "@/components/Contact-page/types/constant";
 import { Metadata } from "next";
 import { cookies } from "next/headers";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const Branches = dynamic(() => import("@/components/Contact-page/Branches"));
 const Reach = dynamic(() => import("@/components/Contact-page/Reach"));
 import Contact from "@/components/Contact-page/Contact";

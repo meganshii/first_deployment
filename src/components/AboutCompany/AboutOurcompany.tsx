@@ -1,6 +1,6 @@
 import BlurImage from "../ui/BlurImage";
 import { gsap } from "gsap";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
 ssr: false,});
 import { ScrollTrigger } from "gsap/ScrollTrigger";

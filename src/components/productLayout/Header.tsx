@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
 ssr: false,});
 import BlurImage from "../ui/BlurImage";

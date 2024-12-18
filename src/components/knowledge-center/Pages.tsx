@@ -6,7 +6,7 @@ const SubSection = dynamic(
 const SectionComponent = dynamic(
   () => import("@/components/knowledge-center/Section")
 );
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic'
 import { KnowledgeCenterItem } from "@/components/knowledge-center/types/constant";
 
 interface KnowledgeCenterProps {
