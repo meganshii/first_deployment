@@ -10,7 +10,7 @@ import dynamic from "next/dynamic";
 // });
 import { PinkCityData } from "./types/constant";
 import BlurImage from "../ui/BlurImage";
-import Image from "next/Image";
+import Image from 'next/image';
 interface AboutLayoutProps{
   pinkcityData:PinkCityData
 }

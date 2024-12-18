@@ -1,5 +1,4 @@
-// DashedLineWithImage.tsx
-import Image from "next/Image";
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

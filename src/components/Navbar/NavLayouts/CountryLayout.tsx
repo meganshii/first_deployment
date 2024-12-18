@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { useState, useTransition, useEffect, useRef } from "react";
 import { locales, LnaguageSwitcherlocales } from "@/i18n";
-import Image from "next/image";
+import Image from 'next/image';
 import { Button } from "@/components/ui/button";
 
 const getFullLanguageName = (code: string) => {

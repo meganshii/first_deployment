@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { KnowYourBusiness, KnowYourMachine, KnowYourProduct, Header, Card, Section } from "./types/nessco";
 

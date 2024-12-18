@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { KnowledgeCenterItem } from "./types/constant";
 import LinkUrl from "../LinkUrl";
 import BlurImage from "../ui/BlurImage";
-import Image from "next/Image";
+import Image from 'next/image';
 
 interface KnowledgeCenterProps {
   knowledgeCenterData: KnowledgeCenterItem;

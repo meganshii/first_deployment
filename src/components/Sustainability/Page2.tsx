@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { SustainabilityData,SecondPageData } from "./types/constant";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BlurImage from "../ui/BlurImage";
-import Image from "next/Image";
+import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 interface MainLayoutProps{
   sustainData:SustainabilityData;
