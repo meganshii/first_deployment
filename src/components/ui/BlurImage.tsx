@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import Image, { ImageProps, StaticImageData } from "next/image";
 import fallbackImage from "../../../public/assets/fallbackImage/fallbackimage.png";
@@ -13,6 +13,11 @@ const BlurImage = ({
   ...rest
 }: Omit<ImageProps, "src"> & { src: string | StaticImageData }) => {
   const [imageSrc, setImageSrc] = useState<string | StaticImageData>(src);
+
+  // Update imageSrc state whenever the src prop changes
+  useEffect(() => {
+    setImageSrc(src);
+  }, [src]);
 
   return (
     <Image

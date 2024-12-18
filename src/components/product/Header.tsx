@@ -75,11 +75,11 @@ const Page1: React.FC<ProductProps> = ({ productData }) => {
   }, [currentSlide]);
 
   return (
-    <div className="bg-white w-full mt-14 flex lg:flex-row flex-col font-poppins font-regular border-b-2 border-solid border-[#cacaca] overflow-hidden">
+    <div className="bg-white w-full mt-14 flex lg:flex-row flex-col font-poppins border-b-2 border-solid border-[#cacaca] overflow-hidden">
       {/* Product Information Section */}
       <div className="lg:w-[40%] lg:px-8 px-[1.5rem]">
         <h1 className="lg:text-5xl text-[1.8rem] lg:leading-[3rem] lg:my-[0.8rem] my-[0.5rem] bg-gradient-to-r from-[#483d73] from-5% via-red-700 via-20% to-red-700  bg-clip-text text-transparent">
-          <span className=" font-medium block">
+          <span className="font-medium block">
             {Header?.ourProduct?.trim().replace(/\s+\S+$/, "")}
           </span>{" "}
           <span className=" font-semibold">
