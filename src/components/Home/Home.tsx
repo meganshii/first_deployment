@@ -1,8 +1,9 @@
 import React from "react";
 
 import dynamic from 'next/dynamic'
-import { HomeData } from "./types/constant";
-import FeatureProjects from "./FeatureProjects";
+import { HomeData } from "./types/constant"
+const FeatureProjects=dynamic(()=>import ("./FeatureProjects"))
+// import FeatureProjects from "./FeatureProjects";
 const ReusableForm = dynamic(() => import("../Contact/ReuseableForm"), {
   ssr: false,
 });

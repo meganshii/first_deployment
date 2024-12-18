@@ -184,6 +184,7 @@ const FeatureProjects: React.FC<FeatureProjectLayoutProps> = ({ heroData }) => {
                       <BlurImage
                         src={item?.image}
                         alt={`${transformString(item?.h1)}`}
+                      
                         width={400}
                         height={400}
                         className="hover:scale-90 transition-all duration-300"

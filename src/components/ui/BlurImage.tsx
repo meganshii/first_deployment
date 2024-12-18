@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import Image, { ImageProps, StaticImageData } from "next/image";
+import Image, { ImageProps, StaticImageData } from 'next/Image';
 import fallbackImage from "../../../public/assets/fallbackImage/fallbackimage.png";
 
 const BlurImage = ({

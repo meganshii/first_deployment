@@ -53,11 +53,12 @@ const VideoCarousel: React.FC<VideoCarouselProps> = ({ heroData }) => {
               ref={(el) => {
                 videoRefs.current[index] = el;
               }}
-              src={video?.src}
               autoPlay={index === currentIndex}
               loop
               muted
               playsInline
+              preload="metadata" // load only metadata to reduce initial load time
+              poster="../../../public/HomeMain.png"
               className="w-full h-full object-cover"
             >
               Your browser does not support the video tag.
