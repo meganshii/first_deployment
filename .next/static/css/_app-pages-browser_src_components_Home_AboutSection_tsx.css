@@ -1,0 +1,53 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./src/components/ui/AnimatedText.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.AnimatedText_box__Be6F_ {
+  width: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.AnimatedText_title__jX0tG {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  height: 20px;
+}
+
+.AnimatedText_block__pHDB5 {
+  width: 0%;
+  height: inherit;
+  background: white;
+  position: absolute;
+  animation: AnimatedText_mainBlock__NYa6w 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
+}
+
+.AnimatedText_heading__YQIsn {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 32px;
+  opacity: 0;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+}
+
+@keyframes AnimatedText_mainBlock__NYa6w {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%; /* Move the block completely out of view */
+  }
+}
+

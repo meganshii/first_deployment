@@ -1,0 +1,127 @@
+{
+  "components\\Contact\\Contact.tsx -> ../Contact/ReuseableForm": {
+    "id": "components\\Contact\\Contact.tsx -> ../Contact/ReuseableForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Contact_ReuseableForm_tsx-_0ebe1.js"
+    ]
+  },
+  "components\\Home\\Common\\HomeMachineCarousel.tsx -> @/components/ui/HomeMachine-cards-carousel": {
+    "id": "components\\Home\\Common\\HomeMachineCarousel.tsx -> @/components/ui/HomeMachine-cards-carousel",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_HomeMachine-cards-carousel_tsx.js"
+    ]
+  },
+  "components\\Home\\Common\\HomeMachineCarousel.tsx -> @/components/ui/HomeMachineCard": {
+    "id": "components\\Home\\Common\\HomeMachineCarousel.tsx -> @/components/ui/HomeMachineCard",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_HomeMachineCard_tsx.js"
+    ]
+  },
+  "components\\Home\\Home.tsx -> ../Contact/ReuseableForm": {
+    "id": "components\\Home\\Home.tsx -> ../Contact/ReuseableForm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Contact_ReuseableForm_tsx-_0ebe0.js"
+    ]
+  },
+  "components\\Home\\Home.tsx -> ../ui/HomeCaorusel": {
+    "id": "components\\Home\\Home.tsx -> ../ui/HomeCaorusel",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_HomeCaorusel_tsx.js"
+    ]
+  },
+  "components\\Home\\Home.tsx -> ./FeatureProjects": {
+    "id": "components\\Home\\Home.tsx -> ./FeatureProjects",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_FeatureProjects_tsx.js"
+    ]
+  },
+  "components\\Home\\HomeMachine.tsx -> ../ui/Stepper": {
+    "id": "components\\Home\\HomeMachine.tsx -> ../ui/Stepper",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_ui_Stepper_tsx.js"
+    ]
+  },
+  "components\\Home\\HomeMachine.tsx -> ./Common/HomeMachineCarousel": {
+    "id": "components\\Home\\HomeMachine.tsx -> ./Common/HomeMachineCarousel",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_Common_HomeMachineCarousel_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> ./AboutSection": {
+    "id": "components\\Home\\MainLayout.tsx -> ./AboutSection",
+    "files": [
+      "static/css/_app-pages-browser_src_components_Home_AboutSection_tsx.css",
+      "static/chunks/_app-pages-browser_src_components_Home_AboutSection_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> ./Iot": {
+    "id": "components\\Home\\MainLayout.tsx -> ./Iot",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_Iot_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/AnnouncementSection": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/AnnouncementSection",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_AnnouncementSection_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/FeatureNews": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/FeatureNews",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_FeatureNews_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/HomeMachine": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/HomeMachine",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_HomeMachine_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/KnowMore": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/KnowMore",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_KnowMore_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/MarqueeSection": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/MarqueeSection",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_MarqueeSection_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/NavLinks": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/NavLinks",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_NavLinks_tsx.js"
+    ]
+  },
+  "components\\Home\\MainLayout.tsx -> @/components/Home/TestimonialsSection": {
+    "id": "components\\Home\\MainLayout.tsx -> @/components/Home/TestimonialsSection",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Home_TestimonialsSection_tsx.js"
+    ]
+  },
+  "components\\Navbar\\NavLayouts\\ResourceLayout.tsx -> @/components/ui/LottieAnimation": {
+    "id": "components\\Navbar\\NavLayouts\\ResourceLayout.tsx -> @/components/ui/LottieAnimation",
+    "files": []
+  },
+  "components\\Navbar\\Navbar.tsx -> ../Contact/Contact": {
+    "id": "components\\Navbar\\Navbar.tsx -> ../Contact/Contact",
+    "files": [
+      "static/chunks/_app-pages-browser_src_components_Contact_Contact_tsx.js"
+    ]
+  },
+  "components\\Navbar\\Navbar.tsx -> ./BlueLogo": {
+    "id": "components\\Navbar\\Navbar.tsx -> ./BlueLogo",
+    "files": []
+  },
+  "components\\Navbar\\Navbar.tsx -> ./NavLayouts/CountryLayout": {
+    "id": "components\\Navbar\\Navbar.tsx -> ./NavLayouts/CountryLayout",
+    "files": []
+  },
+  "components\\Navbar\\Navbar.tsx -> ./nav-menue": {
+    "id": "components\\Navbar\\Navbar.tsx -> ./nav-menue",
+    "files": []
+  }
+}
